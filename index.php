@@ -3,13 +3,20 @@ $servername="localhost";
 $username="root";
 $password="";
 
-//Create connection
-$conn=new mysqli($servername,$username,$password);
+//Create connectionection
+$connection=new mysqli($servername,$username,$password);
 
-	if($conn->connect_error){
-		die("Connection failed: ".$conn->connect_error);
+	if($connection->connect_error){
+		die("connectionection failed: ".$connection->connect_error);
 	}
-	echo "Connected Succefully!!";
-	$conn -> close()
+	//create database
+	$sql="CREATE DATABASE myDB";
+	if($connection -> query($sql) === TRUE){
+		echo "Database created";
+	}else{
+		echo "Error creating database: ".$connection->error;
+	}
+
+	$connection->close();
 
 ?>
