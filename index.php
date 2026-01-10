@@ -11,16 +11,17 @@ $connection=new mysqli($servername,$username,$password, $dbname);
 		die("connectionection failed: ".$connection->connect_error);
 	}
 	//insert multiple Data records Into MySQL
-	$sql="INSERT INTO MyGuests(firstname,lastname,email)VALUES('John','Cena','john@example.com');";
-	$sql .="INSERT INTO MyGuests(firstname,lastname,email)VALUES('Mary','Moe','mary@example.com');";
-	$sql .="INSERT INTO MyGuests(firstname,lastname,email)VALUES('Jullie','Dooley','julie@example.com')";
+	$sql="SELECT id,firstname,lastname FROM MyGuests";
+	$result=$connection ->query($sql);
 
-	if($connection -> multi_query($sql) === TRUE){
-		echo "New record created successfully";
+	if($result -> num_rows >0){
+		//output data of each row
+		while($row = $result ->fetch_assoc()){
+			echo "id: " . $row["id"] . " -Name: " . $row["firstname"]." ". $row["lastname"]. "<br>"; 
+		}
 	}else{
-		echo "Error: " . $sql . "<br>".$connection->error;
+		echo "0 results";
 	}
-
 	$connection->close();
 
 ?>
