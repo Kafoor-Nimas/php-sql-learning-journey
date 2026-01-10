@@ -10,13 +10,13 @@ $connection=new mysqli($servername,$username,$password, $dbname);
 	if($connection->connect_error){
 		die("connectionection failed: ".$connection->connect_error);
 	}
-	//sql to create table
-	$sql="CREATE TABLE MyGuests(id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, firstname VARCHAR(30) NOT NULL, lastname VARCHAR(30) NOT NULL, email VARCHAR(50))";
+	//insert data into table
+	$sql="INSERT INTO MyGuests(firstname,lastname,email)VALUES('John','Cena','john@example.com')";
 
 	if($connection -> query($sql) === TRUE){
-		echo "Table MyGuests created successfully";
+		echo "New record created successfully";
 	}else{
-		echo "Error creating table: ".$connection->error;
+		echo "Error: " . $sql . "<br>".$connection->error;
 	}
 
 	$connection->close();
