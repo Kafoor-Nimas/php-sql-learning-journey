@@ -10,12 +10,12 @@ $connection=new mysqli($servername,$username,$password, $dbname);
 	if($connection->connect_error){
 		die("connectionection failed: ".$connection->connect_error);
 	}
-	//insert multiple Data records Into MySQL
-	$sql="UPDATE MyGuests SET firstname='Kusal', lastname='Mendis' WHERE id=2";
+	//sql to delete a record
+	$sql="DELETE FROM MyGuests WHERE id=2";
 	if($connection -> query($sql) === TRUE){
-		echo "Record updated successfully";
+		echo "Record deleted successfully";
 	}else{
-		echo "Error updating record: ". $connection->error;
+		echo "Error deleting record: ". $connection->error;
 	}
 
 	$connection->close();
