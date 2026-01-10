@@ -1,0 +1,63 @@
+# Database Configuration Files
+config.php
+db_config.php
+database.php
+connection.php
+.env
+.env.local
+
+# Database Files
+*.sql
+*.sqlite
+*.db
+
+# Sensitive Information
+*_credentials.php
+*password*
+*secret*
+
+# PHP
+vendor/
+composer.phar
+composer.lock
+
+# Logs
+*.log
+logs/
+error_log
+debug.log
+
+# Cache
+cache/
+*.cache
+tmp/
+temp/
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+Desktop.ini
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.phpintel/
+*.swp
+*.swo
+*~
+
+# Backup Files
+*.bak
+*.backup
+*.old
+*~
+
+# Upload Directories (if they contain user uploads)
+uploads/*
+!uploads/.gitkeep
+images/uploads/*
+!images/uploads/.gitkeep
