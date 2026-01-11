@@ -6,7 +6,7 @@
     <title>Login</title>
 </head>
 <body>
-    <h2>Login Form</h2>
+    <h2 class="heading">Login Form</h2>
     <form action="" method="post">
         <div>
             <label for="username">
@@ -38,6 +38,7 @@
             header("Location: welcome.php");
         }else{
             echo "<p style='color:red;'>Invalid username or password</p>";
+            
         }
     }
 ?>
