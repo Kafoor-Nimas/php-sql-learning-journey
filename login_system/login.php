@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        .heading{
+            text-align:center;
+            margin-bottom:20px;
+        }
+        body{
+            padding:20px;
+        }
+        form{
+            width:300px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            border:1px solid black;
+            margin:auto;
+        }
+        p{
+            text-align:center;
+        }
+    </style>
 </head>
 <body>
     <h2 class="heading">Login Form</h2>
